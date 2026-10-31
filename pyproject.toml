@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemma4-agent"
+version = "0.1.0"
+description = "Offline autonomous coding-agent harness for the Gemma 4 Developer Agent Competition (Kaggle)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Team moruku36" }]
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# The local LLM client talks to vLLM's OpenAI-compatible HTTP API using only
+# the standard library, so `openai` is optional (kept for notebooks/tooling).
+openai = ["openai>=1.30"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
