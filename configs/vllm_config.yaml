@@ -1,0 +1,31 @@
+# vLLM serving configuration for the bundled Gemma 4 weights.
+# Consumed by src/engine/vllm_server.py. Everything here must work fully
+# offline: `model` points at a local directory inside the Kaggle dataset.
+
+server:
+  host: "127.0.0.1"
+  port: 8000
+  # Seconds to wait for /health after spawn before giving up.
+  startup_timeout_seconds: 900
+  log_file: "artifacts/vllm_server.log"
+
+model:
+  # Local path to the (fine-tuned or baseline) Gemma 4 weights + tokenizer.
+  # Overridable via the GEMMA4_MODEL_PATH environment variable.
+  path: "models/gemma-4"
+  # Served model name exposed by the OpenAI-compatible API.
+  served_name: "gemma-4"
+  dtype: "bfloat16"
+  # null = no quantization (bf16 weights). Set to "awq" / "gptq" only when
+  # the bundled checkpoint was actually quantized that way.
+  quantization: null
+  # Context window served per request. Must stay >= agent context budget
+  # (configs/default_agent.yaml: context.max_context_tokens) + output cap.
+  max_model_len: 32768
+  # L4x4 on Kaggle -> tensor parallel across the 4 GPUs.
+  tensor_parallel_size: 4
+  gpu_memory_utilization: 0.90
+  # Keep prefix caching on: issue text and repo prompts repeat a lot.
+  enable_prefix_caching: true
+  # vLLM seed for reproducible sampling behaviour.
+  seed: 42
