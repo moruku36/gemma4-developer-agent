@@ -1,6 +1,6 @@
 # Gemma 4 Developer Agent — オフライン実行ハーネス
 
-[English](README.md) | 日本語
+日本語版のみ（コンペ期間中は英語版の公開を停止しています）
 
 **Gemma 4 Developer Agent Competition**（Google DeepMind 主催、Kaggle）
 向けの実行基盤です。Kaggle ノートブックの GPU インスタンス（L4x4 等）上
@@ -12,6 +12,8 @@ Pass/Fail）です。
 ファインチューニング済み・ベースラインどちらの Gemma 4 重みでも差し込む
 だけで、ローカル性能検証から Kaggle 提出用バンドル化までを一貫して行える
 ことを目的にしています。
+
+📖 **ドキュメント**：コンペ自体を一から学ぶためのガイドは [docs/competition-guide.ja.md](docs/competition-guide.ja.md)、設計の詳細は [docs/architecture.ja.md](docs/architecture.ja.md) を参照してください。
 
 ## チーム役割分担
 
