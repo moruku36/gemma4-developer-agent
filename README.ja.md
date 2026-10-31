@@ -1,5 +1,7 @@
 # Gemma 4 Developer Agent — オフライン実行ハーネス
 
+[English](README.md) | 日本語
+
 **Gemma 4 Developer Agent Competition**（Google DeepMind 主催、Kaggle）
 向けの実行基盤です。Kaggle ノートブックの GPU インスタンス（L4x4 等）上
 で、Gemma 4 を搭載した自律型コーディングエージェントを**完全オフライン**
