@@ -1,0 +1,40 @@
+# Agent loop configuration — Gemma 4 Developer Agent Competition.
+# All limits are hard caps: the harness must finish inside the 12 h Kaggle
+# notebook budget (server start + all tasks + packaging).
+
+agent:
+  # Maximum model turns per task (one turn = one LLM call + its tool calls).
+  max_steps: 60
+  # Hard stop for a single task, in seconds (wall clock, incl. tool time).
+  task_timeout_seconds: 1800
+  # Cumulative token budget per task (prompt + completion, estimated).
+  max_tokens_per_task: 400000
+  # Sampling for the policy model. Low temperature = reproducible patches.
+  temperature: 0.2
+  # Per-call completion cap.
+  max_completion_tokens: 4096
+  # How many malformed model replies to tolerate before aborting the task.
+  max_parse_errors: 3
+
+context:
+  # Soft budget for the conversation window; pruning kicks in above this.
+  max_context_tokens: 28000
+  # Tool outputs longer than this (chars) are head/tail truncated.
+  tool_output_max_chars: 6000
+  # Keep at least this many recent turns verbatim when pruning.
+  keep_recent_turns: 6
+
+tools:
+  # Default timeout for a single shell/test command, in seconds.
+  command_timeout_seconds: 300
+  # Cap on captured stdout/stderr per command (chars, head+tail kept).
+  command_output_max_chars: 8000
+  # Read at most this many lines from a file in one read_file call.
+  read_max_lines: 400
+
+run:
+  # Global wall-clock budget for a full evaluation run, in seconds.
+  # 12 h total minus ~30 min reserve for server startup and packaging.
+  global_timeout_seconds: 41400
+  # Stop starting new tasks when less than this remains (seconds).
+  reserve_seconds: 900
