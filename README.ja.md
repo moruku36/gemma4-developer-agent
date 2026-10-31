@@ -13,7 +13,7 @@ Pass/Fail）です。
 だけで、ローカル性能検証から Kaggle 提出用バンドル化までを一貫して行える
 ことを目的にしています。
 
-📖 **ドキュメント**：コンペ自体を一から学ぶためのガイドは [docs/competition-guide.ja.md](docs/competition-guide.ja.md)、設計の詳細は [docs/architecture.ja.md](docs/architecture.ja.md) を参照してください。
+📖 **ドキュメント**：コンペ自体を一から学ぶためのガイドは [docs/competition-guide.ja.md](docs/competition-guide.ja.md)、設計の詳細は [docs/architecture.ja.md](docs/architecture.ja.md)、論文などの参考資料は [docs/references/index.ja.md](docs/references/index.ja.md) を参照してください。
 
 ## チーム役割分担
 
