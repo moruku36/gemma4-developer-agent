@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+
+# Local experiment / run outputs
+artifacts/
+results/
+logs/
+*.log
+
+# Offline bundle payloads (large; distributed as a Kaggle dataset, not via git)
+models/
+wheels/
+bundle/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
