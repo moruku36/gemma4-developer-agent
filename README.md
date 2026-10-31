@@ -1,5 +1,7 @@
 # Gemma 4 Developer Agent — Offline Coding Agent Harness
 
+English | [日本語](README.ja.md)
+
 Execution infrastructure for the **Gemma 4 Developer Agent Competition**
 (Google DeepMind, on Kaggle): an autonomous coding agent that runs a
 Gemma 4 model **fully offline** on a Kaggle notebook GPU instance
